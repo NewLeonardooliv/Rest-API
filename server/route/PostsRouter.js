@@ -8,7 +8,8 @@ router.get('/posts', async function (request, response) {
 });
 
 router.get('/posts/:id', async function (request, response) {
-
+    const posts = await postsService.getIdPosts(request.params.id);
+    response.json(posts);
 });
 
 router.post('/posts', async function (request, response) {
