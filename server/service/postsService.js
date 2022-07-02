@@ -1,13 +1,21 @@
-const postData = require('../data/postsData');
+const postsData = require('../data/postsData');
 
 exports.getPosts = function () {
-    return postData.getPosts();
+	return postsData.getPosts();
 };
 
-exports.getIdPosts = function (id) {
-    return postData.getIdPosts(id);
+exports.getPost = function (id) {
+	return postsData.getPost(id);
 };
 
-// exports.deletePosts = function () {
-//     return postData.deletePosts();
-// }
+exports.savePost = function (post) {
+	return postsData.savePost(post);
+};
+
+exports.deletePost = function (id) {
+	return postsData.deletePost(id);
+};
+
+exports.updatePost = function (id, post) {
+	return postsData.updatePost(id, post);
+};

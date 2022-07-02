@@ -1,13 +1,21 @@
 const database = require('../infra/database');
 
 exports.getPosts = function () {
-    return database.query('SELECT * FROM blog.post ORDER BY id ASC');
+	return database.query('select * from blog.post');
 };
 
-exports.getIdPosts = function (id) {
-    return database.query('SELECT * FROM blog.post WHERE id=' + id);
+exports.getPost = function (id) {
+	return database.oneOrNone('select * from blog.post where id = $1', [id]);
 };
 
-// exports.deletePosts = function () {
-//     return database.query('DELETE FROM blog.post WHERE id=1');
-// }
+exports.savePost = function (post) {
+	return database.one('insert into blog.post (title, content) values ($1, $2) returning *', [post.title, post.content]);
+};
+
+exports.updatePost = function (id, post) {
+	return database.none('update blog.post set title = $1, content = $2 where id = $3', [post.title, post.content, id]);
+};
+
+exports.deletePost = function (id) {
+	return database.none('delete from blog.post where id = $1', [id]);
+};
