@@ -1,6 +1,6 @@
 ## API Rest
 
-![prompt](https://i.imgur.com/PP0eT2T.png)
+![prompt](https://i.imgur.com/Zn7OZ9z.png)
 
 ## 🚀 Projeto
 
