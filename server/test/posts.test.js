@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const crypto = require('crypto');
 const axios = require('axios');
 const postsService = require('../service/postsService');

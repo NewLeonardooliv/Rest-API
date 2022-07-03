@@ -7,6 +7,11 @@ router.get('/posts', async function (req, res) {
 	res.json(posts);
 });
 
+router.get('/posts/:id', async function (req, res) {
+	const posts = await postsService.getPost(req.params.id);
+	res.json(posts);
+});
+
 router.post('/posts', async function (req, res) {
 	const post = req.body;
 	const newPost = await postsService.savePost(post);
