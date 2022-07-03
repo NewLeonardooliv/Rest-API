@@ -1,3 +1,5 @@
+create database blog;
+
 create schema blog;
 
 create table blog.post (
